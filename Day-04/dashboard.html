@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Simple Auth System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-container">
+            <h1>Welcome to Dashboard!</h1>
+            <div id="userInfo" class="user-info">
+                <p>Hello, <span id="userName"></span>!</p>
+                <p>You have successfully logged in.</p>
+            </div>
+            <button onclick="logout()" class="btn btn-secondary">Logout</button>
+        </div>
+    </div>
+    <script>
+        // Get user name from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('name');
+        
+        if (userName) {
+            document.getElementById('userName').textContent = userName;
+        } else {
+            document.getElementById('userName').textContent = 'User';
+        }
+
+        function logout() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
