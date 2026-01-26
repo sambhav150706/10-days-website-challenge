@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GlowBlog — Modern Blog Feed</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="/">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__text">
+            <span class="brand__name">GlowBlog</span>
+            <span class="brand__tag">Clean, modern, beginner-friendly</span>
+          </span>
+        </a>
+
+        <nav class="nav">
+          <a class="pill" href="/" aria-current="page">Blog Feed</a>
+          <a class="pill" id="dashboardLink" href="/dashboard.html">Dashboard</a>
+          <button class="pill pill--primary" id="loginBtn" type="button">Login</button>
+          <button class="pill pill--danger" id="logoutBtn" type="button" hidden>Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__card">
+            <h1>Read posts. Write when you’re logged in.</h1>
+            <p>
+              This mini project uses a Node.js + Express backend and saves posts into a local <strong>text file</strong>.
+              The dashboard is protected—only logged-in users can publish, edit, and delete posts.
+            </p>
+            <div class="hero__cta">
+              <button class="pill pill--primary" id="heroLoginBtn" type="button">Login to publish</button>
+              <a class="pill" href="/dashboard.html">Open dashboard</a>
+            </div>
+            <p class="help" style="margin-top: 14px">
+              Demo login: <strong>admin</strong> / <strong>admin123</strong>
+            </p>
+          </div>
+
+          <div class="stat">
+            <div class="stat__chip">
+              <span class="stat__label">Total posts</span>
+              <span class="stat__value" id="totalPosts">—</span>
+            </div>
+            <div class="stat__chip">
+              <span class="stat__label">You are</span>
+              <span class="stat__value" id="whoami">Guest</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <h2 class="section__title">Latest posts</h2>
+              <p class="section__sub">A stylish cards layout, loaded dynamically from the backend.</p>
+            </div>
+            <button class="pill" id="refreshBtn" type="button">Refresh</button>
+          </div>
+
+          <div id="feed" class="grid" aria-live="polite"></div>
+          <div id="empty" class="empty" hidden>
+            No posts yet. Login and publish your first post from the dashboard.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">Built with HTML, CSS, JavaScript, and Express. File DB: <code>server/data/posts.txt</code>.</div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="overlay" id="loginOverlay" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+        <div class="modal__head">
+          <div>
+            <h3 class="modal__title" id="loginTitle">Login</h3>
+            <p class="help" style="margin: 6px 0 0">Use <strong>admin</strong> / <strong>admin123</strong></p>
+          </div>
+          <button class="x" type="button" id="closeLogin">Close</button>
+        </div>
+        <div class="modal__body">
+          <form id="loginForm">
+            <div class="field">
+              <label class="label" for="username">Username</label>
+              <input class="input" id="username" name="username" autocomplete="username" placeholder="admin" />
+            </div>
+            <div class="field">
+              <label class="label" for="password">Password</label>
+              <input
+                class="input"
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="admin123"
+              />
+            </div>
+            <div class="actions">
+              <button class="pill pill--primary" id="loginSubmit" type="submit">Sign in</button>
+              <button class="pill" type="button" id="fillDemo">Fill demo</button>
+            </div>
+            <p class="help" id="loginHelp" style="margin-top: 10px"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-wrap" id="toastWrap" aria-live="polite" aria-relevant="additions"></div>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/feed.js"></script>
+  </body>
+</html>
+

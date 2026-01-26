@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GlowBlog — Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="/">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__text">
+            <span class="brand__name">GlowBlog</span>
+            <span class="brand__tag">Dashboard</span>
+          </span>
+        </a>
+
+        <nav class="nav">
+          <a class="pill" href="/">Blog Feed</a>
+          <a class="pill pill--primary" href="/dashboard.html" aria-current="page">Dashboard</a>
+          <button class="pill pill--danger" id="logoutBtn" type="button">Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero" style="padding-bottom: 10px">
+        <div class="hero__card">
+          <h1 style="margin-bottom: 6px">Create & manage your posts</h1>
+          <p style="margin-bottom: 0">
+            Only logged-in users can access this page. Posts are stored in a local text file with title, content, author,
+            and timestamp.
+          </p>
+          <p class="help" id="whoami" style="margin-top: 14px"></p>
+        </div>
+      </section>
+
+      <section class="dash">
+        <div class="panel">
+          <h2 class="panel__title">Post editor</h2>
+          <p class="panel__sub">Write a title and content, then publish. Click “Edit” on a post to update it.</p>
+
+          <form id="editorForm">
+            <input type="hidden" id="postId" />
+            <div class="field">
+              <label class="label" for="title">Title</label>
+              <input class="input" id="title" maxlength="120" placeholder="e.g. My first blog post" />
+              <div class="help" id="titleHelp">Minimum 3 characters, maximum 120.</div>
+            </div>
+            <div class="field">
+              <label class="label" for="content">Content</label>
+              <textarea class="textarea" id="content" maxlength="20000" placeholder="Write something helpful..."></textarea>
+              <div class="help" id="contentHelp">Minimum 20 characters.</div>
+            </div>
+
+            <div class="actions">
+              <button class="pill pill--primary" id="publishBtn" type="submit">Publish</button>
+              <button class="pill" id="clearBtn" type="button">Clear</button>
+            </div>
+            <p class="help" id="editorHelp" style="margin-top: 10px"></p>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h2 class="panel__title">Your posts</h2>
+          <p class="panel__sub">Edit or delete your posts. The feed updates instantly after changes.</p>
+
+          <div class="actions" style="margin-top: 0">
+            <button class="pill" id="refreshMine" type="button">Refresh</button>
+          </div>
+
+          <div class="list" id="mineList"></div>
+          <div id="mineEmpty" class="empty" hidden>You haven’t published anything yet.</div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast-wrap" id="toastWrap" aria-live="polite" aria-relevant="additions"></div>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>
+

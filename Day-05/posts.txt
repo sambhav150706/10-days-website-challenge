@@ -1,0 +1,10 @@
+[
+  {
+    "id": "e10949af-f0e3-47d0-a227-90c059666daa",
+    "title": "My first blog",
+    "content": "This is my first blog on this website and I find this amazing experience. My name is sambhav",
+    "author": "admin",
+    "createdAt": 1769418156922,
+    "updatedAt": 1769418212572
+  }
+]
