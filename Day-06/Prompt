@@ -1,0 +1,7 @@
+Create a mini e-commerce website using HTML, CSS and JavaScript.  
+Display products dynamically with add-to-cart functionality.  
+Build a cart page showing selected items, quantity and total price.  
+Add a checkout page for order confirmation.  
+Create a Node.js backend using Express.  
+When an order is placed, save user details, products and total price into a local text file.  
+Keep UI modern, logic simple and code beginner friendly.
