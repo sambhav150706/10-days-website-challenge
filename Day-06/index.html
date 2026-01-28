@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Shop - Products</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="products">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Mini<span>Shop</span></div>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="checkout.html">Checkout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="hero">
+      <div>
+        <h1>Discover our best online courses</h1>
+        <p>Handpicked tutorials to boost your skills. Simple demo store built with HTML, CSS, JavaScript and Node.js.</p>
+      </div>
+      <div class="hero-tag">
+        <span class="pill">Day 06 Challenge</span>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="section-header">
+        <h2>Courses</h2>
+        <p>Select a course and add it to your cart.</p>
+      </div>
+      <div id="productsGrid" class="products-grid">
+        <!-- Products rendered by app.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>MiniShop &copy; <span id="currentYear"></span>. Built for practice.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

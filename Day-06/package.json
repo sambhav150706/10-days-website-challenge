@@ -1,0 +1,27 @@
+{
+  "name": "mini-ecommerce-day-06",
+  "version": "1.0.0",
+  "description": "Mini e-commerce website with HTML, CSS, JS and a simple Node.js/Express backend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "express",
+    "beginner",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
+

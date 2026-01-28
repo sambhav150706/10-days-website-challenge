@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Shop - Checkout</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="checkout">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Mini<span>Shop</span></div>
+      <nav class="nav-links">
+        <a href="index.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="checkout.html" class="active">Checkout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="section-header">
+      <h1>Checkout</h1>
+      <p>Enter your details and place your order.</p>
+    </section>
+
+    <section class="checkout-layout">
+      <form id="checkoutForm" class="card checkout-form">
+        <h2>Customer Details</h2>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required placeholder="Jane Doe" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="3" required placeholder="123 Main Street, City"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Place Order</button>
+        <p id="checkoutMessage" class="checkout-message"></p>
+      </form>
+
+      <aside class="card checkout-summary">
+        <h2>Order Summary</h2>
+        <div id="checkoutItems" class="checkout-items">
+          <!-- Summary rendered by app.js -->
+        </div>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <span id="checkoutTotal">$0.00</span>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>MiniShop &copy; <span id="currentYear"></span>. Built for practice.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

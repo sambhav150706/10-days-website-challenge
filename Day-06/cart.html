@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Shop - Cart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="cart">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Mini<span>Shop</span></div>
+      <nav class="nav-links">
+        <a href="index.html">Products</a>
+        <a href="cart.html" class="active">Cart</a>
+        <a href="checkout.html">Checkout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="section-header">
+      <h1>Your Cart</h1>
+      <p>Review items before you checkout.</p>
+    </section>
+
+    <section class="cart-section">
+      <div id="cartItems" class="cart-items">
+        <!-- Cart items rendered by app.js -->
+      </div>
+
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Items</span>
+          <span id="cartItemCount">0</span>
+        </div>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <div class="summary-actions">
+          <a href="index.html" class="btn btn-secondary">Continue Shopping</a>
+          <a href="checkout.html" class="btn btn-primary" id="goToCheckoutBtn">Go to Checkout</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>MiniShop &copy; <span id="currentYear"></span>. Built for practice.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
