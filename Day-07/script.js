@@ -8,7 +8,7 @@
    CONFIGURATION
    Get your free API key at: https://openweathermap.org/api
    ============================================ */
-const API_KEY = '29a3821dfc4754dabaad51dbb704f151'; // Replace with your key
+const API_KEY = 'YOUR API HERE'; // Replace with your key
 const API_BASE = 'https://api.openweathermap.org/data/2.5/weather';
 const ICON_BASE = 'https://openweathermap.org/img/wn/';
 
@@ -191,3 +191,4 @@ searchInput.addEventListener('input', () => {
    Ensure prompt is visible on first load
    ============================================ */
 showPrompt();
+
