@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App | Live Forecast</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts for clean typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animated gradient background -->
+  <div class="bg-gradient"></div>
+
+  <main class="container">
+    <!-- Header with title -->
+    <header class="header">
+      <h1 class="title">Weather<span class="accent">Now</span></h1>
+      <p class="subtitle">Get live weather for any city</p>
+    </header>
+
+    <!-- Search section -->
+    <section class="search-section">
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="Search city (e.g. London, Tokyo)"
+          autocomplete="off"
+          aria-label="Search city for weather"
+        />
+        <button type="button" id="search-btn" class="search-btn" aria-label="Search weather">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+        </button>
+      </div>
+      <!-- Error message (hidden by default) -->
+      <p id="error-msg" class="error-msg" role="alert" aria-live="polite"></p>
+    </section>
+
+    <!-- Loading state -->
+    <section id="loading-section" class="loading-section hidden">
+      <div class="loader"></div>
+      <p class="loading-text">Fetching weather data...</p>
+    </section>
+
+    <!-- Weather display (hidden until data is loaded) -->
+    <section id="weather-section" class="weather-section hidden">
+      <div class="weather-card">
+        <!-- City name and date -->
+        <div class="weather-header">
+          <h2 id="city-name" class="city-name">—</h2>
+          <p id="weather-date" class="weather-date">—</p>
+        </div>
+
+        <!-- Main weather info with icon -->
+        <div class="weather-main">
+          <div class="weather-icon-wrapper">
+            <img id="weather-icon" class="weather-icon" src="" alt="Weather condition icon">
+          </div>
+          <div class="temp-wrapper">
+            <span id="temperature" class="temperature">—</span>
+            <span class="temp-unit">°C</span>
+          </div>
+          <p id="weather-condition" class="weather-condition">—</p>
+        </div>
+
+        <!-- Details grid: humidity, wind speed -->
+        <div class="weather-details">
+          <div class="detail-item">
+            <span class="detail-icon" aria-hidden="true">💧</span>
+            <div>
+              <span class="detail-label">Humidity</span>
+              <span id="humidity" class="detail-value">—</span>
+            </div>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon" aria-hidden="true">💨</span>
+            <div>
+              <span class="detail-label">Wind Speed</span>
+              <span id="wind-speed" class="detail-value">—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Initial prompt (shown when no search yet) -->
+    <section id="prompt-section" class="prompt-section">
+      <p class="prompt-text">Enter a city name above to see the weather</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+Create a modern, responsive weather website using HTML, CSS and JavaScript.  
+Add a search bar to find weather by city name.  
+Fetch live weather data from a public API (like OpenWeatherMap) using fetch and async/await.  
+Display temperature, weather condition, humidity, wind speed and a weather icon dynamically.  
+Show loading state and user-friendly error message for invalid city.  
+Use a clean UI with smooth animations, gradients and mobile-first design.  
+Organize code into index.html, style.css and script.js with clear comments.
