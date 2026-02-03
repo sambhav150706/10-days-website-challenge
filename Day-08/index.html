@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal To‑Do / Notes</title>
+    <!-- Google Font for modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="app-shell">
+        <header class="app-header">
+          <div class="app-title-group">
+            <h1 class="app-title">Today’s Tasks</h1>
+            <p class="app-subtitle">Minimal to‑do & notes, saved locally.</p>
+          </div>
+          <div class="app-meta">
+            <span class="date" id="currentDate"></span>
+          </div>
+        </header>
+
+        <!-- Input area for new tasks / notes -->
+        <section class="composer">
+          <form id="taskForm" class="composer-form" autocomplete="off">
+            <div class="field-group">
+              <input
+                type="text"
+                id="taskTitle"
+                class="input title-input"
+                placeholder="Add a task or quick note…"
+                aria-label="Task title"
+                required
+              />
+            </div>
+            <div class="field-group field-group--inline">
+              <textarea
+                id="taskDetails"
+                class="input details-input"
+                rows="2"
+                placeholder="Optional details, links, or notes"
+                aria-label="Task details"
+              ></textarea>
+              <button type="submit" class="btn primary-btn">
+                <span class="btn-label" id="submitLabel">Add</span>
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Empty state message when there are no tasks -->
+        <section id="emptyState" class="empty-state" aria-live="polite">
+          <div class="empty-illustration"></div>
+          <h2 class="empty-title">Nothing here yet</h2>
+          <p class="empty-body">
+            Start by adding a task or note using the field above. Your list will
+            be stored in this browser so it’s here when you return.
+          </p>
+        </section>
+
+        <!-- List of tasks -->
+        <section class="task-section">
+          <ul id="taskList" class="task-list" aria-live="polite"></ul>
+        </section>
+      </section>
+
+      <footer class="app-footer">
+        <small>
+          Data is stored locally in your browser using
+          <code>localStorage</code>.
+        </small>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
