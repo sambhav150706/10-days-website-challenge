@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - BizPro</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo">BizPro Admin</div>
+            <div class="user-actions">
+                <span style="margin-right: 15px;">Welcome, Admin</span>
+                <button id="logoutBtn" class="btn btn-primary" style="padding: 5px 15px; font-size: 0.9rem;">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title" style="text-align: left; font-size: 2rem;">Messages</h2>
+        <div id="messagesList">
+            <!-- Messages will be loaded here -->
+            <div class="empty-state">Loading messages...</div>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
